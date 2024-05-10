@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #dadad2;
+}
+header {
+    background-color: black; /* Off-white background color */
+    color: white; /* Black text color */
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* Ensure header is above other content */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.transparent {
+    background-color: rgba(245, 245, 245, 0); /* Transparent background color */
+}
+
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 80px 20px 20px; /* Adjust padding to accommodate the fixed header */
+}
+
+footer {
+    background-color: #dadad2; /* Set footer background to transparent */
+    color: black;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1; /* Ensure footer is above other content */
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.checkbox-group {
+    margin-top: 10px;
+}
+
+.checkbox-group label {
+    display: block;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+/* Add this CSS to style.css */
+
+#healthMeter {
+    width: 100%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the meter */
+    display: block;
+}
+
+:root {
+    --color-red: red;
+    --color-yellow: yellow;
+    --color-green: green;
+    --color-pink: pink;
+}
+
+#healthMeter::-webkit-meter-optimum-value {
+    background: linear-gradient(to right, var(--color-red) 0%, var(--color-red) 35%, var(--color-yellow) 35%, var(--color-yellow) 65%, var(--color-green) 65%, var(--color-green) 90%, var(--color-pink) 90%);
+}
