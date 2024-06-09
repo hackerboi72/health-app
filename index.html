@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthFit</title>
+    <title>HealthFit - Calculate Your Health Score</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="mainHeader">
+    <header>
         <h1>HealthFit</h1>
     </header>
     <main>
-        <section class="container">
+        <div class="container">
             <h2>Calculate Your Health Score</h2>
             <form id="healthForm">
                 <div class="form-group">
@@ -22,47 +22,49 @@
                         <option value="other">Other</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="age">Age:</label>
                     <input type="number" id="age" name="age" required>
                 </div>
-
                 <div class="form-group">
                     <label for="bmi">BMI:</label>
-                    <input type="number" id="bmi" name="bmi" step="0.01" required>
+                    <input type="number" id="bmi" name="bmi" step="0.1" required>
+                    <br>
+                    <a href="https://www.calculator.net/bmi-calculator.html" class="bmi-link">Calculate your BMI here</a>
                 </div>
-
                 <div class="form-group">
-                    <label for="liquorConsumption">Liquor Consumption (units/week):</label>
+                    <label for="liquorConsumption">Liquor Consumption (drinks per week):</label>
                     <input type="number" id="liquorConsumption" name="liquorConsumption" required>
                 </div>
-
                 <div class="form-group">
-                    <label for="smokingFrequency">Smoking Frequency (cigarettes/day):</label>
+                    <label for="smokingFrequency">Smoking Frequency (cigarettes per day):</label>
                     <input type="number" id="smokingFrequency" name="smokingFrequency" required>
                 </div>
-
-                <div class="checkbox-group">
-                    <label for="hypertension"><input type="checkbox" id="hypertension" name="hypertension"> Hypertension</label>
-                    <label for="diabetes"><input type="checkbox" id="diabetes" name="diabetes"> Diabetes</label>
-                    <label for="heartDisease"><input type="checkbox" id="heartDisease" name="heartDisease"> Heart Disease</label>
-                    <label for="asthma"><input type="checkbox" id="asthma" name="asthma"> Asthma</label>
-                    <label for="highCholesterol"><input type="checkbox" id="highCholesterol" name="highCholesterol"> High Cholesterol</label>
-                    <label for="kidneyDisease"><input type="checkbox" id="kidneyDisease" name="kidneyDisease"> Kidney Disease</label>
-                    <label for="liverDisease"><input type="checkbox" id="liverDisease" name="liverDisease"> Liver Disease</label>
+                <div class="form-group checkbox-group">
+                    <label><input type="checkbox" id="hypertension"> Hypertension</label>
+                    <label><input type="checkbox" id="diabetes"> Diabetes</label>
+                    <label><input type="checkbox" id="heartDisease"> Heart Disease</label>
+                    <label><input type="checkbox" id="asthma"> Asthma</label>
+                    <label><input type="checkbox" id="highCholesterol"> High Cholesterol</label>
+                    <label><input type="checkbox" id="kidneyDisease"> Kidney Disease</label>
+                    <label><input type="checkbox" id="liverDisease"> Liver Disease</label>
                 </div>
-  <center>
-    <button type="submit">Calculate Health Score</button>
-  </center>
+                <button type="submit">Calculate</button>
             </form>
-        </section>
-        <section id="results" class="container" style="display: none;">
-            <center><h2>Your Health Score</h2></center>
-            <center><p id="healthScore"></p></center>
-            <meter id="healthMeter" min="0" max="100" value="0"></meter>
-        </section>
+            <div id="healthScoreContainer">
+                <div id="healthMeter">
+                    <div class="meter-fill"></div>
+                </div>
+                <div id="healthScore"></div>
+            </div>
+        </div>
     </main>
+    <footer>
+        <div class="container">
+            <h2>About HealthFit</h2>
+            <p>HealthFit is dedicated to helping you understand and improve your health. Our health score calculator takes into account various factors such as BMI, lifestyle choices, and medical conditions to provide a comprehensive assessment of your health.</p>
+        </div>
+    </footer>
     <script src="main.js"></script>
 </body>
 </html>
