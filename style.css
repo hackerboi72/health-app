@@ -119,7 +119,7 @@ button:hover {
 #healthMeter {
     width: 100%;
     height: 50px;
-    background-color: #e0e0e0;
+    background-color: white;
     border-radius: 25px;
     overflow: hidden;
     margin: 20px 0;
