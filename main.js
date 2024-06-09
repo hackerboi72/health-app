@@ -60,21 +60,19 @@ document.getElementById('healthForm').addEventListener('submit', function(event)
 
     // Display health score
     const healthScoreElement = document.getElementById('healthScore');
-    healthScoreElement.textContent = `Your Health Score is: ${healthScore}`;
-    document.getElementById('results').style.display = 'block';
+    healthScoreElement.textContent = healthScore;
 
-    // Update health meter
-    const healthMeter = document.getElementById('healthMeter');
-    healthMeter.value = healthScore;
+    // Update the health meter
+    const healthMeterFill = document.querySelector('#healthMeter .meter-fill');
+    healthMeterFill.style.width = healthScore + '%';
+});
 
-    // Update meter color based on health score ranges
-    if (healthScore <= 35) {
-        healthMeter.color = 'red';
-    } else if (healthScore <= 65) {
-        healthMeter.color = 'yellow';
-    } else if (healthScore <= 90) {
-        healthMeter.color = 'green';
+// Make header transparent on scroll
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('transparent');
     } else {
-        healthMeter.color = 'pink';
+        header.classList.remove('transparent');
     }
 });
